@@ -38,8 +38,10 @@ export const login = async (req, res, next) => {
 			userData.refreshToken,
 			{
 				maxAge: 30 * 24 * 60 * 60 * 1000,
-				httpOnly: true
-			}
+				httpOnly: true,
+				secure: process.env.NODE_ENV === 'production',  // Устанавливаем secure только в production
+				sameSite: 'None',
+			},
 		);
 
 		return res.json(userData);
@@ -84,7 +86,9 @@ export const refresh = async (req, res, next) => {
 			userData.refreshToken,
 			{
 				maxAge: 30 * 24 * 60 * 60 * 1000,
-				httpOnly: true
+				httpOnly: true,
+				secure: process.env.NODE_ENV === 'production',  // Устанавливаем secure только в production
+				sameSite: 'None',
 			}
 		);
 
@@ -118,7 +122,9 @@ export const updateProfile = async (req, res, next) => {
 			userData.refreshToken,
 			{
 				maxAge: 30 * 24 * 60 * 60 * 1000,
-				httpOnly: true
+				httpOnly: true,
+				secure: process.env.NODE_ENV === 'production',  // Устанавливаем secure только в production
+				sameSite: 'None',
 			}
 		);
 
