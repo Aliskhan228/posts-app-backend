@@ -48,8 +48,6 @@
 
 ## API эндпоинты
 
-Сервер запускается на порту 8081 по адресу `http://localhost:8081/`. Запросы на сервер также происходят по этому адресу с использованием API эндпоинтов. Например, `http://localhost:8081/auth/register`. Ниже перечислены все эндпоинты:
-
 ### Auth Routes
 
 - POST `/auth/register` — регистрация.
@@ -79,56 +77,10 @@
 - DELETE `/posts/:id/comments/:commentId` — удалить комментарий.
 - DELETE `/posts/:id/comments/:commentId/like` — удалить лайк с комментария.
 
-## Пререквизиты
+##Frontend репозиторий
 
-Для работы с проектом необходимо:
+Для взаимодействия с этим backend можно использовать готовый frontend проект.
 
-- **Node.js** версии 14 или выше
-- **npm** или **yarn**
+1. Клонировать репозиторий с frontend проектом можно по следующей ссылке: [Medium Clone - Frontend](https://github.com/Aliskhan228/medium-clone-frontend.git).
 
-## Установка
-
-1. Клонируйте репозиторий:
-
-   ```bash
-   git clone https://github.com/Aliskhan228/medium-clone-backend.git
-   ```
-
-2. Перейдите в директорию проекта:
-
-   ```
-    cd medium-clone-backend
-   ```
-
-3. Установите зависимости:
-
-   ```
-   npm install
-   ```
-
-   или, если вы используете yarn:
-
-   ```
-   yarn install
-   ```
-
-4. Запустите сервер:
-
-   ```
-   npm run dev
-   ```
-
-   или с помощью yarn:
-
-   ```
-   yarn dev
-   ```
-
-5. Тестируйте API по адресу:
-
-   ```
-   http://localhost:8081
-   ```
-
-## Frontend репозиторий
-Для тестирования API нужно запустить [Frontend проект](https://github.com/Aliskhan228/medium-clone-frontend.git) либо использоаать инструменты для тестирования API, такие как Postman или Insomnia.
+2. Тестировать в продакшене можно по следующему URL: [Production версия](https://newmedium.vercel.app).
