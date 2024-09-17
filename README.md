@@ -77,7 +77,7 @@
 - DELETE `/posts/:id/comments/:commentId` — удалить комментарий.
 - DELETE `/posts/:id/comments/:commentId/like` — удалить лайк с комментария.
 
-##Frontend репозиторий
+## Frontend репозиторий
 
 Для взаимодействия с этим backend можно использовать готовый frontend проект.
 
