@@ -1,3 +1,4 @@
+import { allowedOrigins } from '../index.js';
 import UserService from '../services/UserService.js';
 
 export const register = async (req, res, next) => {
@@ -70,7 +71,11 @@ export const activate = async (req, res, next) => {
 	try {
 		const activationLink = req.params.link;
 		await UserService.activate(activationLink);
-		return res.redirect(process.env.CLIENT_URL);
+
+		const origin = req.get('origin');
+		const redirectUrl = allowedOrigins.includes(origin) ? origin : process.env.CLIENT_URL;
+
+		return res.redirect(redirectUrl);
 	} catch (err) {
 		next(err);
 	}

@@ -8,12 +8,19 @@ import router from './router/router.js';
 import error from './middlewares/error.js';
 
 const app = express();
+export const allowedOrigins = [process.env.CLIENT_URL, process.env.LOCAL_CLIENT_URL]
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
 	credentials: true,
-	origin: process.env.CLIENT_URL
+	origin: (origin, callback) => {
+		if (allowedOrigins.includes(origin) || !origin) {
+			callback(null, true);
+		} else {
+			callback(new Error('Not allowed by CORS'));
+		}
+	}
 }));
 app.use(router);
 app.use('/uploads', express.static('uploads'));
