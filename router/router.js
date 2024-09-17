@@ -48,7 +48,7 @@ router.post('/profile', uploadAvatar.single('avatar'), (req, res) => {
 		avatarUrl: `/uploads/avatars/${req.file.originalname}`,
 	})
 });
-router.post('/upload', checkAuth, uploadImage.single('image'), (req, res) => {
+router.post('/upload', uploadImage.single('image'), (req, res) => {
 	try {
 		res.json({
 			"success": 1,
