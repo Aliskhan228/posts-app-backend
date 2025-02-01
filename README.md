@@ -84,9 +84,3 @@
 1. Клонировать репозиторий с frontend проектом можно по следующей ссылке: [Medium Clone - Frontend](https://github.com/Aliskhan228/medium-clone-frontend.git).
 
 2. Тестировать в продакшене можно по следующему URL: [Production версия](https://newmedium.vercel.app).
-
-## Автор
-
-Aliskhan – Frontend разработчик
-
-[GitHub](https://github.com/Aliskhan228)
